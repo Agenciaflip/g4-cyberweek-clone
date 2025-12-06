@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Week | G4 Educação</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&family=Exo:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --coral-primary: #FF5448;
+            --coral-light: #FF6B61;
+            --coral-dark: #D94035;
+            --text-dark: #1a1a1a;
+            --text-gray: #666;
+            --bg-light: #f8f8f8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 40px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,84,72,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            background: var(--coral-primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(255, 84, 72, 0.4);
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--coral-primary);
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 100px;
+            backdrop-filter: blur(10px);
+        }
+
+        .countdown-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            margin: 40px 0 20px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Benefits Cards */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 84, 72, 0.2);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--coral-primary), var(--coral-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .benefit-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Coral Button */
+        .coral-btn {
+            background: var(--coral-primary);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 9999px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 84, 72, 0.4),
+                        inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+
+        .coral-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(255, 84, 72, 0.6),
+                        inset 0 -2px 10px rgba(0, 0, 0, 0.2),
+                        0 0 50px rgba(255, 84, 72, 0.75);
+        }
+
+        .coral-btn-arrow {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .coral-btn:hover .coral-btn-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Marquee */
+        .marquee-wrapper {
+            background: var(--coral-primary);
+            padding: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee {
+            display: flex;
+            animation: scroll 70s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            font-family: 'Oswald', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            padding: 0 50px;
+            text-transform: uppercase;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Section */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Courses Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, var(--coral-light), var(--coral-primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .course-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--coral-primary);
+        }
+
+        /* Bonus Cards */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .bonus-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .bonus-tag {
+            background: var(--coral-primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bonus-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .bonus-description {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-metric {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--coral-primary);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .testimonial-company {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Price Comparison */
+        .price-comparison {
+            background: var(--bg-light);
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin: 60px 0;
+        }
+
+        .comparison-table {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .price-column {
+            text-align: center;
+        }
+
+        .price-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-value {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .price-total {
+            font-size: 56px;
+            color: var(--coral-primary);
+        }
+
+        /* Final Offer */
+        .final-offer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            border-radius: 30px;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-offer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 84, 72, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .offer-tag {
+            font-family: 'Oswald', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--coral-primary);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--coral-primary);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .final-price {
+            margin: 60px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-installment {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .price-main {
+            font-family: 'Oswald', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+            margin: 10px 0;
+        }
+
+        .price-cash {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            background: var(--bg-light);
+            border-radius: 30px;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .guarantee-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            background: var(--coral-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .countdown {
+                gap: 10px;
+            }
+
+            .countdown-item {
+                padding: 15px;
+                min-width: 70px;
+            }
+
+            .countdown-number {
+                font-size: 32px;
+            }
+
+            .countdown-label {
+                font-size: 10px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .offer-tag {
+                font-size: 48px;
+            }
+
+            .price-main {
+                font-size: 48px;
+            }
+
+            .coral-btn {
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+
+            .courses-grid,
+            .bonus-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="logo">Cyber Week | G4 Educação</div>
+
+        <div class="badge">ÚLTIMOS MINUTOS DA BLACK FRIDAY G4</div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">DIAS</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">HORAS</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">MINUTOS</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">SEGUNDOS</div>
+            </div>
+        </div>
+
+        <h1>Condições exclusivas de CyberWeek</h1>
+        <div class="subtitle">Todos os cursos online DO G4 pelo resto da sua vida</div>
+        <p class="description">São mais de R$35.800 em formações e bônus exclusivos por uma fração do valor.</p>
+
+        <!-- Benefits Cards -->
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">♾️</div>
+                <div class="benefit-title">Acesso vitalício</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎁</div>
+                <div class="benefit-title">Bônus exclusivos</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📚</div>
+                <div class="benefit-title">Todos os novos cursos</div>
+            </div>
+        </div>
+
+        <a href="#oferta" class="coral-btn">
+            <span>Quero garantir condição exclusiva</span>
+            <svg class="coral-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee-wrapper">
+        <div class="marquee">
+            <span class="marquee-content">TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • </span>
+            <span class="marquee-content">TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • TODOS CURSOS ONLINE • </span>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <section>
+        <h2 class="section-title">+100 Cursos online do G4 Educação</h2>
+        <p class="section-subtitle">Somando tudo, todas as formações e treinamentos online tem o valor superior a R$ 35.800. Mas seu investimento será MUITO menor que isso!</p>
+
+        <div class="courses-grid" id="coursesGrid">
+            <div class="course-card">
+                <div class="course-image">G4 Marketing Estratégico</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Marketing Estratégico</div>
+                    <div class="course-price">R$ 3.997</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Growth</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Growth</div>
+                    <div class="course-price">R$ 2.997</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Startups</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Startups</div>
+                    <div class="course-price">R$ 1.697</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Marketing e Branding</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Marketing e Branding</div>
+                    <div class="course-price">R$ 1.697</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Marketing Tático</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Marketing Tático</div>
+                    <div class="course-price">R$ 1.997</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Experiência do Cliente</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Experiência do Cliente</div>
+                    <div class="course-price">R$ 2.997</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Digital Commerce</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Digital Commerce</div>
+                    <div class="course-price">R$ 1.997</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Fundamentos em Growth</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Fundamentos em Growth</div>
+                    <div class="course-price">R$ 697</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">Fundamentos em Recrutamento</div>
+                <div class="course-content">
+                    <div class="course-name">Fundamentos em Recrutamento e Seleção</div>
+                    <div class="course-price">R$ 697</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Fundamentos em Vendas</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Fundamentos em Vendas</div>
+                    <div class="course-price">R$ 697</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Fundamentos em E-Commerce</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Fundamentos em E-Commerce</div>
+                    <div class="course-price">R$ 697</div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">G4 Fundamentos em Liderança</div>
+                <div class="course-content">
+                    <div class="course-name">G4 Fundamentos em Liderança</div>
+                    <div class="course-price">R$ 697</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#oferta" class="coral-btn">
+                <span>Garantir condição exclusiva</span>
+                <svg class="coral-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section style="background: var(--bg-light);">
+        <h2 class="section-title">Bônus Exclusivos</h2>
+
+        <div class="bonus-grid">
+            <div class="bonus-card">
+                <div class="bonus-tag">500 Primeiros</div>
+                <h3 class="bonus-title">Mentoria online com Tallis Gomes, Alfredo Soares e Bruno Nardon</h3>
+                <p class="bonus-description">Os fundadores do G4 olhando pro seu negócio.</p>
+            </div>
+
+            <div class="bonus-card">
+                <h3 class="bonus-title">1 ano de monitorias semanais com especialistas G4</h3>
+                <p class="bonus-description">Acompanhamento periódico para garantir aplicação do que aprendeu e transformar conhecimento em receita no caixa da sua empresa</p>
+            </div>
+
+            <div class="bonus-card">
+                <h3 class="bonus-title">Ingresso presencial do G4 Valley 2026</h3>
+                <p class="bonus-description">Participação no maior evento para empresários do país, com acesso a grandes mentores, conteúdo valioso e uma experiência de alto padrão</p>
+            </div>
+
+            <div class="bonus-card">
+                <h3 class="bonus-title">Todos os programas online que forem lançados</h3>
+                <p class="bonus-description">O mercado atualiza rápido, então todo novo conteúdo será seu, sem precisar se preocupar com custo adicional de renovação. Somente nos 6 primeiros meses do ano que vem, vamos liberar mais de R$10.000 em novos cursos.</p>
+            </div>
+
+            <div class="bonus-card">
+                <h3 class="bonus-title">100 Ferramentas e playbooks práticos</h3>
+                <p class="bonus-description">Economize tempo e dinheiro usando metodologias e frameworks que já foram testados e validados pelas empresas de maior sucesso no Brasil e no mundo. Chega de teorias, você vai colocar em prática com velocidade tudo o que aprender.</p>
+            </div>
+
+            <div class="bonus-card">
+                <h3 class="bonus-title">Ofertas de parceiros</h3>
+                <p class="bonus-description">Dezenas de milhares de reais em bônus de parceiros do ecossistema G4, com vantagens que estão disponíveis somente para os compradores da Black Friday G4.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <h3 class="section-title" style="margin-bottom: 40px;">Parcerias Destacadas</h3>
+
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <h3 class="bonus-title">🚀 AWS - Crie um Projeto Piloto</h3>
+                    <p class="bonus-description">O time de Arquitetos de Soluções AWS e Parceiros AWS Certificados vão desenvolver com a sua empresa uma POC: Um projeto piloto de IA de 3 meses, totalmente personalizado para o seu negócio. É um Agente de IA funcional, pronto para ser implementado na sua operação.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <h3 class="bonus-title">🍔 iFood - R$ 1,00 por colaborador</h3>
+                    <p class="bonus-description">Você vai ter acesso ao benefício corporativo do iFood para usar com seu time pagando apenas R$1 por colaborador, nos 3 primeiros meses.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <h3 class="bonus-title">💼 V4 Company - 30% desconto</h3>
+                    <p class="bonus-description">A V4 oferece 30% de desconto em qualquer produto ou serviço do seu core business. Ex: se você contratar um serviço de R$10.000 por mês, vai economizar R$3.000 por mês - ou R$36.000 por ano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <h2 class="section-title">Resultados Comprovados</h2>
+        <p class="section-subtitle">Aprenda com quem faz e tem resultados acima da média</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-metric">+132%</div>
+                <p class="testimonial-quote">"Saímos de R$ 430K por mês de faturamento para R$ 1 Milhão por mês em apenas 5 meses."</p>
+                <div class="testimonial-author">Rodrigo Vitto</div>
+                <div class="testimonial-company">Cargon</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-metric">R$ 3MM</div>
+                <p class="testimonial-quote">"Saímos de quase fechar a empresa para um faturamento de R$ 3 milhões em 6 meses. A gente não achava que ia ser tão rápido."</p>
+                <div class="testimonial-author">Ricardo Castro</div>
+                <div class="testimonial-company">Nova Andes Trading Company</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-metric">+3788</div>
+                <p class="testimonial-quote">"Após entrar no G4 Educação, nós passamos de 397 colaboradores para 4.185 colaboradores."</p>
+                <div class="testimonial-author">Tuca Tapajós</div>
+                <div class="testimonial-company">Grupo Cavalcanti</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-metric">2x</div>
+                <p class="testimonial-quote">"Nós conseguimos dobrar a quantidade de funcionários, que foi de 20 para 40 na operação total da América."</p>
+                <div class="testimonial-author">Patrick Nunes</div>
+                <div class="testimonial-company">Zankyou Weddings</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-metric">+400%</div>
+                <p class="testimonial-quote">"Nós saímos de de R$2 milhões de faturamento por ano para R$10 milhões de faturamento por ano, ou seja, 400% de crescimento."</p>
+                <div class="testimonial-author">Maicon Guedes</div>
+                <div class="testimonial-company">Informma Síndicos</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-metric">R$ 1 BI</div>
+                <p class="testimonial-quote">"Saímos de de R$18 milhões de faturamento anual para R$1 BILHÃO por ano após entrar nos programas do G4 Educação"</p>
+                <div class="testimonial-author">Fernando Garcia</div>
+                <div class="testimonial-company">123Comprou</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Comparison -->
+    <section>
+        <div class="price-comparison">
+            <h2 class="section-title">PAGUE UMA VEZ, APRENDA PARA SEMPRE</h2>
+            <p class="section-subtitle">Você terá acesso vitalício com todas as atualizações de conteúdo, sem nenhum tipo de custo adicional por renovação.</p>
+
+            <div class="comparison-table">
+                <div class="price-column">
+                    <div class="price-label">Primeira compra</div>
+                    <div class="price-value">R$ 35.800</div>
+                </div>
+                <div style="font-size: 40px; color: var(--text-gray);">+</div>
+                <div class="price-column">
+                    <div class="price-label">Renovação 01</div>
+                    <div class="price-value">R$ 17.900</div>
+                </div>
+                <div style="font-size: 40px; color: var(--text-gray);">+</div>
+                <div class="price-column">
+                    <div class="price-label">Renovação 02</div>
+                    <div class="price-value">R$ 17.900</div>
+                </div>
+                <div style="font-size: 40px; color: var(--text-gray);">+</div>
+                <div class="price-column">
+                    <div class="price-label">Renovação 03</div>
+                    <div class="price-value">R$ 17.900</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 60px 0 40px;">
+                <div style="font-size: 20px; color: var(--text-gray); margin-bottom: 15px;">Em 3 anos?</div>
+                <div class="price-total">R$ 89.500</div>
+                <div style="font-size: 18px; color: var(--text-gray); margin-top: 10px;">só pra continuar acessando.</div>
+            </div>
+
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 36px; text-align: center; margin: 60px 0 20px;">Mas, você não vai pagar nem perto disso.</h3>
+        </div>
+    </section>
+
+    <!-- Final Offer -->
+    <section id="oferta">
+        <div class="final-offer">
+            <div class="offer-tag">A MAIOR</div>
+            <h2 class="offer-title">OFERTA EXCLUSIVA DA CYBERWEEK</h2>
+            <p style="font-size: 20px; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; position: relative; z-index: 1;">
+                Todos os nossos cursos online (até os futuros) - pelo resto da sua vida.
+            </p>
+            <p style="font-size: 16px; color: rgba(255, 255, 255, 0.8); max-width: 800px; margin: 0 auto 60px; position: relative; z-index: 1;">
+                Garanta acesso vitalício a todos os cursos online do G4 Educação que, somados, têm valor superior a 35 mil reais.
+            </p>
+
+            <div class="offer-stats">
+                <div class="offer-stat">
+                    <div class="stat-number">+100</div>
+                    <div class="stat-label">Cursos online</div>
+                </div>
+                <div class="offer-stat">
+                    <div class="stat-number">+350h</div>
+                    <div class="stat-label">Horas de conteúdo</div>
+                </div>
+                <div class="offer-stat">
+                    <div class="stat-number">+100</div>
+                    <div class="stat-label">Ferramentas aplicáveis</div>
+                </div>
+            </div>
+
+            <div class="final-price">
+                <div class="price-installment">por apenas</div>
+                <div class="price-main">12x de R$ 291,41</div>
+                <div class="price-cash">ou R$ 3.497 à vista</div>
+            </div>
+
+            <a href="#checkout" class="coral-btn" style="background: white; color: var(--coral-primary);">
+                <span>Quero garantir condição exclusiva</span>
+                <svg class="coral-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section>
+        <div class="guarantee">
+            <div class="guarantee-icon">🛡️</div>
+            <h2 class="section-title">Risco zero</h2>
+            <p class="section-subtitle">Acreditamos tanto que essa oferta tem tudo o que sua empresa precisa para crescer, que vamos assumir qualquer risco por você</p>
+
+            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin: 40px 0 20px;">Garantia Incondicional:</h3>
+                <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 30px;">
+                    Você tem 7 dias para acessar essa oferta, assistir ao conteúdo, usar as ferramentas e a inteligência artificial para colher resultados. Se dentro desse período, você desistir de alavancar o seu crescimento, basta chamar o nosso suporte que auxiliaremos no reembolso. Simples assim.
+                </p>
+
+                <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin: 40px 0 20px;">Garantia Condicional:</h3>
+                <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 30px;">
+                    Se mesmo depois de 7 dias, você aplicar o conteúdo que indicamos no mapa de implementação e comprovar que não teve retorno, você terá uma call exclusiva com nosso time de especialistas para estruturar um novo plano de ação para seu negócio. E se, mesmo depois desse plano você ainda não tiver retorno, devolvemos 100% do valor investido. Sem burocracias.
+                </p>
+
+                <p style="font-weight: 700; text-align: center; font-size: 18px; color: var(--coral-primary); margin-top: 40px;">
+                    Mas vai durar pouco mais de 24h e, provavelmente, não se repetirá, não com essa mesma condição.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                A CyberWeek do G4 é um curso?
+                <span style="color: var(--coral-primary);">+</span>
+            </div>
+            <div class="faq-answer">
+                Não. A CyberWeek G4 é a oportunidade de você acessar o Plano Personalizado para o Crescimento da sua Empresa, onde você entende o que sua empresa precisa hoje, recebe mapas de implementação adequados ao seu momento e conta com o monitoramento do G4 para garantir que tudo seja executado da melhor forma.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                A CyberWeek G4 tem garantia?
+                <span style="color: var(--coral-primary);">+</span>
+            </div>
+            <div class="faq-answer">
+                Sim. Se, mesmo depois de aplicar o conteúdo e as ferramentas, você comprovar que não teve retorno sobre o seu investimento, terá uma call exclusiva com nosso time de especialistas para estruturar um novo plano de ação no seu negócio. E, mesmo depois desse plano, se você ainda não tiver um retorno sobre seu investimento, devolvemos 100% do valor investido.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Quais temas eu vou aprender?
+                <span style="color: var(--coral-primary);">+</span>
+            </div>
+            <div class="faq-answer">
+                Os 5 pilares que fazem qualquer empresa crescer acima da média: Gestão, Vendas, Growth, Cultura e Experiência do Cliente. Com o diagnóstico incluso na oferta, você recebe um score de saúde da sua empresa e uma nota em cada um dos 5 pilares.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Minha empresa é pequena, pode me ajudar?
+                <span style="color: var(--coral-primary);">+</span>
+            </div>
+            <div class="faq-answer">
+                Sim. É ideal para empresas de todos os tamanhos. Com nosso diagnóstico personalizado, identificamos as melhores oportunidades de crescimento específicas para o seu negócio e fornecemos planos de ação práticos para cada etapa. Além disso, oferecemos suporte contínuo e monitoramento para garantir que você obtenha os melhores resultados possíveis. Muitos dos nossos alunos começaram pequenos e conseguiram crescer exponencialmente.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Como funciona o plano personalizado para o crescimento da sua empresa?
+                <span style="color: var(--coral-primary);">+</span>
+            </div>
+            <div class="faq-answer">
+                O Plano Personalizado começa com um diagnóstico (Fase 1) detalhado do seu negócio, identificando oportunidades e gargalos. Com base nesse diagnóstico, você recebe mapas de implementação específicos (Fase 2) para o momento atual da sua empresa. Além disso, você tem monitoramento contínuo (Fase 3) com nosso time de especialistas, garantindo que todas as ações sejam executadas da melhor forma para o crescimento sustentável da sua empresa.
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="text-align: center; padding: 100px 20px;">
+        <a href="#oferta" class="coral-btn" style="font-size: 22px; padding: 25px 60px;">
+            <span>Garantir condição exclusiva agora</span>
+            <svg class="coral-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">G4 Educação</div>
+        <p style="color: rgba(255, 255, 255, 0.6); margin-top: 20px;">
+            © 2025 G4 Educação. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const deadline = new Date('2025/12/31 23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (timeLeft < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerHTML = '<div style="color: white; font-size: 24px;">Oferta Encerrada</div>';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Toggle (opcional)
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('span');
+
+                if (answer.style.display === 'none' || !answer.style.display) {
+                    answer.style.display = 'block';
+                    icon.textContent = '-';
+                } else {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
